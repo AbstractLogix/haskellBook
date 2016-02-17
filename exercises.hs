@@ -68,9 +68,23 @@ mult2 = \x -> \y -> x * y
 add3 x = (+) 3 x
 addx3' = (+) 3
 
+-- chapter 5 Types
+-- " A subclass cannot override the methods of its superclass. "
 
+{-
+  "Haskell's type inference is built on an extended version of the Damas-Hindley-Milner
+  type system."
+  "Type variables have no meaning outside the type signatures where they are bound."
+-}
 
+-- exercises page 180
 
+--1.  Type signature of general function
+--    (++) :: [a] -> [a] -> [a]
+myConcat x = x ++ " yo" -- This will change the signature to :: [Char] -> [Char]
 
+--2. General function
+--   (*) :: Num a => a -> a -> a
+myMult x = (x / 3) * 5 -- signature will remain the same until it's use
 
-
+--

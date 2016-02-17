@@ -87,4 +87,4 @@ myConcat x = x ++ " yo" -- This will change the signature to :: [Char] -> [Char]
 --   (*) :: Num a => a -> a -> a
 myMult x = (x / 3) * 5 -- signature will remain the same until it's use
 
---
+-

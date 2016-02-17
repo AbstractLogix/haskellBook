@@ -85,6 +85,56 @@ myConcat x = x ++ " yo" -- This will change the signature to :: [Char] -> [Char]
 
 --2. General function
 --   (*) :: Num a => a -> a -> a
-myMult x = (x / 3) * 5 -- signature will remain the same until it's use
+myMult x = (x / 3) * 5 -- signature will change to Fractional constraint
 
--
+--3. take :: Int -> [a] -> [a]
+myTake x = take x "hey you" -- Int -> [Char] -> [Char]
+
+--4. (>) :: Ord a => a -> a -> Bool
+myCom x = x > (length [1..10]) -- Int -> Bool
+
+--5. (<) :: Ord a => a -> a -> Bool
+myAlph x = x < 'z' -- Char -> Bool
+
+----------------------------- 5.8
+-- Type-Kwon-Do exercises
+-- 1.
+func :: Int -> String
+func = undefined
+
+g :: String -> Char
+g = undefined
+
+h :: Int -> Char
+h x = g $ func x
+
+-- 2.
+data A
+data B
+data C
+
+q :: A -> B
+q = undefined
+
+w :: B -> C
+w = undefined
+
+e :: A -> C
+e x = w $ q x
+
+-- 3.
+data X
+data Y
+data Z
+
+xz :: X -> Z
+xz = undefined
+
+yz :: Y -> Z
+yz = undefined
+
+xform :: (X, Y) -> (Z,Z)
+xform =
+
+
+

@@ -134,7 +134,16 @@ yz :: Y -> Z
 yz = undefined
 
 xform :: (X, Y) -> (Z,Z)
-xform =
+xform (a,b) = (xz a, yz b)
 
+-- 4.
+f1 :: x -> y
+f1  = undefined
 
+f2 :: y -> (w,z)
+f2  = undefined
 
+munge :: (x -> y) -> (y -> (w,z)) -> x -> w
+munge x = (fst.f2) $ (f1 x)
+
+-- End of chapter 5 Types
